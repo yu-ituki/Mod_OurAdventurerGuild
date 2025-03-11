@@ -8,6 +8,8 @@ Our Adventurer Guild のModです。
 
 ビルド手順や導入手順などは[一つ前のページ](https://github.com/yu-ituki/Mod_OurAdventurerGuild)に記載してあります。  
 
+![](mod_image.jpg)
+
 # ソース説明
 SaveJotunnQuestSacrifice.cs がほぼ全てです。  
 ヨトゥン戦の生贄はBattleMapTileInteractableのTimeLimitトリガーで作られているようなので、  

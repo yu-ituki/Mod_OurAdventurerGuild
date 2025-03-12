@@ -46,6 +46,13 @@ Vortex経由でModを入れるか、手動で入れてください。
 
 基本的にはこれだけでビルドが出来て、ビルド後は自動的にBepInEx/pluginsフォルダにModがコピーされます。  
 
+# 新規Modの作成簡易ガイド
+Mod作成用のテンプレートを用意しました。  
+このプロジェクトをCloneするかダウンロードしてきて、ModTemplateフォルダとLibsフォルダのみを使用します。  
+詳細な手順やテンプレートは[このページ](https://github.com/yu-ituki/Mod_OurAdventurerGuild/tree/main/ModTemplate) に記載してあります。  
+その他不明点があれば[こちら](https://x.com/ituki_yu)に質問してきてください。  
+あと良さげなModが出来たら自分も使いたいのでください。  
+
 # ライセンスと免責
 MITライセンスです。  
 あと何も責任は取りません。  

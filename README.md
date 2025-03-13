@@ -32,7 +32,7 @@ Vortex経由でModを入れるか、手動で入れてください。
 
 # 各Modのビルド手順
 ## 開発環境
-* Windows 11
+* Windows 10/11
 * Visual Studio 2022
 * .NET Framework 4.8
 

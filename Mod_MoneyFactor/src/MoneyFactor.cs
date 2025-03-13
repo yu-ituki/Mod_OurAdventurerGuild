@@ -16,7 +16,7 @@ namespace Mod
 		/// <param name="__instance"></param>
 		[HarmonyLib.HarmonyPrefix]
 		[HarmonyLib.HarmonyPatch(typeof(HubManager), "AddGold")]
-		static void _Prefix_AddExperiencePoints(ref int amount) {
+		static void _Prefix_AddGold(ref int amount) {
 			amount = UnityEngine.Mathf.CeilToInt(amount * Plugin.Instance.ModConfig.Factor.Value);
 		}
 

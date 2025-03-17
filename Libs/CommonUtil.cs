@@ -100,6 +100,39 @@ namespace Mod
 		}
 
 	
+		public static Sprite LoadSprite( string resName ) {
+			var tex = LoadTexture(resName);
+			return Sprite.Create( tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+		}
+
+		public static void UnloadSprite( ref Sprite sprite ) {
+			var tex = sprite?.texture;
+			UnloadTexture(ref tex);
+			sprite = null;
+		}
+
+
+		public static Texture2D LoadTexture( string resName ) {
+			try {
+				var path = GetResourcePath(resName);
+				var bytes = System.IO.File.ReadAllBytes(path);
+				var tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+				if ( !tex.LoadImage(bytes) ) {
+					UnloadTexture(ref tex);
+					return null;
+				}
+				tex.Apply();
+				return tex;
+			} catch ( System.Exception e ) {
+				DebugUtil.LogError(e);
+			}
+			return null;
+		}
+		public static void UnloadTexture(ref Texture2D tex) {
+			if ( tex != null )
+				Texture2D.Destroy(tex);
+			tex = null;
+		}
 
 		public static bool GetMouseDown(int button) {
 			return UnityEngine.Input.GetMouseButtonDown(button);

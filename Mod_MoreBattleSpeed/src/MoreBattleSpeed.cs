@@ -76,6 +76,23 @@ namespace Mod
 			return false; //< こっちの処理で乗っ取る.
 		}
 
+		/// <summary>
+		/// UI再設定処理...
+		/// </summary>
+		/// <param name="__instance"></param>
+		[HarmonyLib.HarmonyPostfix]
+		[HarmonyLib.HarmonyPatch(typeof(BattleManagerV2), "UpdateBattleSpeedUI")]
+		static void _Postfox_UpdateBattleSpeedUI(BattleManagerV2 __instance) {
+			s_CurrentExSpeed = 0;
+			float currentScale = __instance.GlobalDatabase.BattleSpeedScale;
+			for ( int i = 0; i < s_Infos.Length; ++i ) {
+				if (!CommonUtil.IsEqual(s_Infos[i].m_Speed, currentScale))
+					continue;
+				__instance.BattleSpeedIcon.sprite = s_Infos[i].m_Sprite;
+				s_CurrentExSpeed = i;
+				break;
+			}
+		}
 
 	}
 }
